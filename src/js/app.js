@@ -1,13 +1,15 @@
 const product1={price:990,model:"Sonia czerwona", size:"XL"}
 const product2={price:850,model:"Alan czarny", size:"2XL"}
-const discount = 10
+const discount = 100
+let discountEnabled = false;
 
-//String(), Number(), Boolean() !!
-if(isNaN(product1.price) || isNaN(product2.price)){
-    console.log("Podano niepoprawny typ danych")
-}
-
-//dodaj produkty do tabeli
+//Containery
+    const discountContainer=document.querySelector("#discount")
+    const discountCheckbox=document.querySelector('#add-discount')
+    const totalPriceContainer=document.querySelector('#total-price')
+    const discountAmountContainer=document.querySelector("#discount-amount")
+    
+//Dodanie produktów do tabeli
 const itemsContainer= document.querySelector("#items")
 let counter=1;
 function addItem(item){
@@ -21,15 +23,40 @@ function addItem(item){
     counter++;
 }
 
+//Dodawanie produktów
 addItem(product1)
 addItem(product2)
 
-let total = Number(product1.price) + Number(product2.price);
-const totalWithDoscount=total-10
+//Dodaj zniżkę
+function addDiscount(e){
+    if(e.target.checked){
+        discountContainer.classList.remove('hidden')
+        calculatePrice(discount);
+    }else{
+        discountContainer.classList.add('hidden')
+        calculatePrice();
+    }
+}
 
-//cena całkowita
-const price = document.querySelector("#total-price").innerHTML=total
-console.log(`price from document ${price}`)
+//Funkcja do obliczania ceny
+function calculatePrice(discount){
+    let total = Number(product1.price) + Number(product2.price)
+    if(!discount){
+        totalPriceContainer.innerHTML=total
+    }else{
+        totalPriceContainer.innerHTML=total-discount
+    }
+}
 
-console.log(`Cena przed zniżką: ${total}`)
-console.log(`Cena po zniżce: ${totalWithDoscount}`)
+calculatePrice();
+
+//Dodaj zniżkę
+discountAmountContainer.innerHTML=discount
+
+//listenery
+discountCheckbox.addEventListener('click',addDiscount)
+
+//Zaznaczenie checkboxa jeśli została przekazana odpowiedania warotść z index.html
+if(Boolean(+discountContainer.dataset.discountShouldBeEnabled)){
+    discountCheckbox.click();
+}

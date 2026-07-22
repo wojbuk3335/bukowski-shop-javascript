@@ -18,3 +18,19 @@ body {
 .card-table th {
   background-color: #ededed;
 }
+
+.discount{
+    border:1px solid #3bc53b;
+    padding: 4px 8px;
+    background-color: #d3f8d3;
+}
+
+.hidden{
+    display:none;
+}
+
+.add-discount:hover,
+#add-discount:hover
+{
+    cursor:pointer;
+}
