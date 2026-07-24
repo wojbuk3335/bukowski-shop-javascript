@@ -9,6 +9,7 @@ body {
   background-color: #fff;
   width: 100%;
   border-spacing: 0;
+  text-align:center;
 }
 .card-table th,
 .card-table td {
@@ -33,4 +34,28 @@ body {
 #add-discount:hover
 {
     cursor:pointer;
+}
+
+.marked{
+    background-color:rgb(255, 242, 207)
+}
+
+.card-table td input{
+    width:30px;
+}
+
+.delete{
+  background:none;
+  border:0;
+  font-size:18px;
+  color:grey;
+  cursor:pointer;
+}
+
+input{
+  padding:6px;
+  border:0;
+  border-bottom:3px solid grey;
+  background-color:rgb(230, 230, 230);
+  text-align:center;
 }
