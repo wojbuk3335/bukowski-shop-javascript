@@ -30,33 +30,34 @@
   </div>
 </nav>
 
-<main class="container py-4">
-  <div class="row g-4 shop-layout">
-    <div class="col-12 col-lg-8">
-      <h2 class="mb-4">Dostępne produkty</h2>
+  <h2>Koszyk</h2>
 
-      <section class="products">
-        <div class="box">
-          <img src="src/img/1.jpg" alt="kurtki">
-          <div class="box-body">
-            <p class="box-title">Alan czarny XL</p>
-            <p>Cena: <b>400</b> zł</p>
-            <button class="add-to-cart button" data-model="Alan" data-size="XL" data-price="400">Dodaj do koszyka</button>
-          </div>
-        </div>
+  <table class="card-table">
+    <thead>
+      <tr>
+        <th>Lp</th>
+        <th>Usuń</th>
+        <th>Model</th>
+        <th>Rozmiar</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody id="items">
+    </tbody>
+    <tfooter>
+      <tr>
+        <td colspan="5" style="text-align: right;"><b>Razem:</b></td>
+        <td><b id="total-price"></b></td>
+      </tr>
+    </tfooter>
+  </table>
 
-        <div class="box">
-          <img src="src/img/1.jpg" alt="kurtki">
-          <div class="box-body">
-            <p class="box-title">Alan czarny XL</p>
-            <p>Cena: <b>400</b> zł</p>
-            <button class="add-to-cart button" data-model="Alan" data-size="XL" data-price="400">Dodaj do koszyka</button>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-</main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <label class="add-discount"><input id="add-discount" type="checkbox">Zastosuj zniżkę</label>
+  
+
+  <p class="discount hidden" id="discount" data-discount-should-be-enabled="1">Zniżka: <b id="discount-amount">0</b> zł</p>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="src/js/cart.js"></script>
 </body>
 </html>

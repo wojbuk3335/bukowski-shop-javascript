@@ -17,7 +17,7 @@ const cart={
     isEmpty(){ return this.items.length===0 },
 
     addItem(item){
-        itemsContainer.innerHTML+=`<tr class="tablerows" data-id="${item.id}" onclick="markBg()">
+        itemsContainer.innerHTML+=`<tr class="tablerows" data-id="${item.id}" >
             <td class="counter">${this.counter}</td>
             <td><button class="delete">X</button></td>
             <td>${item.model}</td>
@@ -53,13 +53,13 @@ const itemsContainer= document.querySelector("#items")
     const totalPriceContainer=document.querySelector('#total-price')
     const discountAmountContainer=document.querySelector("#discount-amount")
     const table=document.querySelector(".card-table")
+    const tableRows=document.querySelectorAll(".tablerows")
 
-
-function markBg(){
-    if(window.event.target.tagName==="INPUT"){
-        window.event.stopPropagation();
+function markBg(e){
+    if(e.target.tagName==="INPUT"){
+        e.stopPropagation();
     }else{
-        window.event.target.closest('tr').classList.toggle('marked')
+        e.target.closest('tr').classList.toggle('marked')
     }
     
 }
@@ -145,6 +145,7 @@ discountAmountContainer.innerHTML=cart.discount.amount
 
 //listenery
 discountCheckbox.addEventListener('click',addDiscount.bind(cart))
+tableRows.forEach(row => row.addEventListener('click',markBg))
 table.addEventListener('click',deleteRow.bind(cart))
 
 //Zaznaczenie checkboxa jeśli została przekazana odpowiedania warotść z index.html

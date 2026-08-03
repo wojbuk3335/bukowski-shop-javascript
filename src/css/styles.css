@@ -2,8 +2,42 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fcfcfc;
+  background: radial-gradient(circle at top right, #fff2cc 0%, #fcfcfc 45%, #f2f4f7 100%);
   font-size: 16px;
+}
+
+.navbar {
+  backdrop-filter: blur(4px);
+}
+
+.nav-cart-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cart-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-count {
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffc83d;
+  color: #1e1e1e;
+  font-weight: 700;
 }
 .card-table {
   background-color: #fff;
@@ -41,7 +75,7 @@ body {
 }
 
 .card-table td input{
-    width:30px;
+  width:80px;
 }
 
 .delete{
@@ -58,4 +92,123 @@ input{
   border-bottom:3px solid grey;
   background-color:rgb(230, 230, 230);
   text-align:center;
+}
+
+.box{
+  background-color:#ffffff;
+  border:1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.06);
+}
+
+.box-body{
+  padding:10px 20px;
+}
+
+.box-title{
+  font-size:18px;
+  font-weight:600;
+}
+
+.button{
+  background-color:#000000;
+  color:#ffffff;
+  padding:10px 20px;
+  border:0;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.button:hover{
+  background-color:#2f3030;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.products .box {
+  width: min(100%, 320px);
+}
+
+.cart-panel {
+  position: sticky;
+  top: 96px;
+  border-radius: 18px;
+  padding: 22px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fb);
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cart-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cart-panel-header h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.cart-panel-badge {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: #111111;
+  color: #ffffff;
+}
+
+.cart-panel-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  background: #fff2cc;
+  color: #262626;
+}
+
+.cart-panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.cart-panel-subtitle {
+  color: #606060;
+  margin: 0 0 18px;
+}
+
+.cart-panel-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed #cfcfcf;
+  padding-top: 12px;
+  font-size: 18px;
+}
+
+@media (max-width: 991px) {
+  .cart-panel {
+    position: static;
+    top: auto;
+  }
+
+  .nav-cart-indicator {
+    margin-top: 12px;
+    width: fit-content;
+  }
 }
